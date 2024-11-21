@@ -1,5 +1,6 @@
+add_newline = true
 format = """
-[  ]( fg:#87CEFA )\
+[┌ ](fg:#87CEFA)\
 $directory\
 $git_branch\
 $git_status\
@@ -8,8 +9,11 @@ $nodejs\
 $rust\
 $golang\
 $php\
-$time\
-\n$character"""
+$lua\
+$python\
+$lien_break
+[└─>](fg:#87CEFA)
+"""
 
 [line_break]
 disabled = true
@@ -25,6 +29,8 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+"Retroarch" = "󱎓"
+"Android" = ""
 
 [git_branch]
 symbol = ":: "
@@ -39,35 +45,33 @@ format = "[[$all_status$ahead_behind](fg:#f1502f)]($style)"
 symbol = " "
 
 [nodejs]
+symbol = " "
 style = "fg:#6ca35e"
-format = "[$symbol($version)]($style)"
+format = "[${symbol} NodeJS ($version)]($style)"
 
 [rust]
-symbol = ""
+symbol = " "
 style = "fg:#6ca35e"
-format = "[$symbol($version)]($style)"
+format = "[$symbol Rust ($version)]($style)"
 
 [golang]
-symbol = ""
+symbol = " "
 style = "fg:#6ca35e"
-format = "[$symbol($version)]($style)"
+format = "[$symbol Go ($version)]($style)"
 
 [php]
-symbol = ""
+symbol = " "
 style = "fg:#6ca35e"
-format = "[$symbol($version)]($style)"
+format = "[$symbol PHP ($version)]($style)"
 
-[time]
-disabled = false
-style = "fg:#00ff00"
-format = "[   $time]($style)"
+[lua]
+symbol = " 󰢱"
+style = "fg:6ca35e"
+format = "[$symbol Lua ($version )]($style)"
 
-[character]
-success_symbol = "[󰭟 ](bold green)"
-error_symbol = "[󰭟 ](bold red)"
+[python]
+symbol = " 󰌠"
+style = "fg:6ca35e"
+format = "[$symbol Python ($version )]($style)"
 
-#[time]
-#disabled = false
-#time_format = "%R" # Hour:Minute Format
-#style = "bg:#1d2230"
-#format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
